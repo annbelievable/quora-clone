@@ -1,0 +1,24 @@
+
+<h1 align="center">Questions from around the world</h1>
+
+<% if logged_in? %>
+  <div class="jumbotron">
+  <p>Your profile id: <%= current_user.username %></p>
+  <form method="get" action="/logout">
+    <button>Log out</button>
+  </form>
+  </div>
+<% end %>
+
+<% n=1 %>
+<% @questions.each do|q| %>
+  <div class="jumbotron">
+  <p><%= "#{n}.   " %><%= q.question %></p>
+  <form method="post" action="/answer">
+
+      <input type=text  placeholder="Answer it" name='ans'><br>
+      <input type=submit value="Answer">
+  </form>
+</div>
+  <% n+=1 %>
+<% end %>

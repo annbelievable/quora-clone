@@ -8,6 +8,10 @@ require 'rubygems'
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 require 'pathname'
 
+  # I added these 2 gems
+require 'byebug'
+require 'bcrypt'
+
 	# database
 require 'pg'
 require 'active_record'

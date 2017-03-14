@@ -1,2 +1,20 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<div class="container" align="center">
+
+<h1>Quora</h1>
+<p><strong>QU</strong>estions <strong>OR</strong> <strong>A</strong>nswers</p>
+
+<h2>Sign Up!</h2><!-- please infuse login here too -->
+<form class="login-block" method="post" action="/signup">
+    <input type=text placeholder="Username" name="user[username]"><br>
+    <input type=text placeholder="Email" name="user[email]"><br>
+    <input type=password placeholder="Password" name="user[password]"></br>
+    <input type=password placeholder="Retype Password" name="user[password_confirmation]"></br>
+    <input class="btn btn-primary btn-md" type=submit value="Sign up">
+</form>
+
+<h3>Sign In if you already sign up!</h3>
+<form method="get" action="/signin">
+    <button class="btn btn-primary btn-md">Sign In</button>
+</form>
+
+</div>

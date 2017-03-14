@@ -1,0 +1,37 @@
+
+<div class="col-sm-1"></div>
+<div class="col-sm-10 text-left">
+
+<h1>Profile</h1>
+<% if logged_in? %>
+<p>Your profile id: <%= current_user.username %></p>
+<% end %>
+
+<form method="get" action="/logout">
+    <button>Log out</button>
+</form>
+
+<h2>Seek for your Answer~</h2>
+<form method="post" action="/question">
+    <input class="form-group form-group-lg" style="text-align:center; width:600px; height:200px;" type=text  placeholder="~Your Question Here~" name='que'><br>
+    <input type=submit value="Ask">
+</form>
+
+<% if current_user.questions.nil? %>
+  <% n=1 %>
+  <h3>My questions:</h3>
+  <% current_user.questions.each do |q| %>
+    <p><%= "#{n}.   " %><%= q.question %></p>
+    <p><%= q.answer %></p>
+  <% end %>
+<% end %>
+
+<% if current_user.answers.nil? %>
+  <% n=1 %>
+  <h3>My answers:</h3>
+  <% current_user.answer.each do |a| %>
+    <p><%= "#{n}.   " %><%= a.answer %></p>
+  <% end %>
+<% end %>
+
+</div>
